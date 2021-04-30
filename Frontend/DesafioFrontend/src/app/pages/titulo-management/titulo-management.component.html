@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row search-container">
+        <app-filter [label]="'Filtro'" [placeholder]="'Buscar por Titulo'" (filter)="searchList($event)">
+        </app-filter>
+    </div>
+    <div class="scroll-container">
+        <div class="scroll-container">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="text-center">Titulo</th>
+                  <th class="text-center">Devedor</th>
+                  <th class="text-center">Qtd Parcelas</th>
+                  <th class="text-center">Valor Original</th>
+                  <th class="text-center">Dias em atraso</th>
+                  <th class="text-center">Valor atual</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let titulo of titulosList | filter: 'numero':filterArgs; let i = index; ">
+                <tr>
+                  <td class="text-center">
+                    <span>{{titulo.numero}}</span>
+                  </td>
+                  <td class="text-center">
+                    <span>{{titulo.nomeDevedor}}</span>
+                  </td>
+                  <td class="text-center">
+                    <span>{{titulo.qtdParcelas}}</span>
+                  </td>
+                  <td class="text-center">
+                    <span>{{titulo.valorOriginal | currency:'BRL':true }}</span>
+                  </td>
+                  <td class="text-center">
+                    <span>{{titulo.diasEmAtraso}}</span>
+                  </td>
+                  <td class="text-center">
+                    <span>{{titulo.valorAtual | currency:'BRL':true }}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="8" class="collapse-row">
+                    <div [attr.id]="'parcelas-' + i" class="container">
+                      <div class="row" *ngFor="let parcela of titulo.parcelas">
+                        <div class="col">Parcela: {{parcela.numero}}</div>
+                        <div class="col">Valor: {{parcela.valor | currency:'BRL':true}}</div>
+                        <div class="col">Vencimento: {{parcela.dataVencimento | date:'dd/MM/yyyy'}}</div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="footer-button">
+              <button type="button" class="button button-success transition" (click)="addTitulo()">Adicionar</button>
+            </div>
+        </div>
+    </div>
+</div>
