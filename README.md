@@ -25,13 +25,13 @@
     
 
 # Como executar
-* Backend
+  * Backend
     1. Vá ao diretório raiz do projeto Backend ___(~/DesafioFULL/Backend/DesafioBackend)___
     2. Abra a solution do projeto ___(DesafioBackend.sln)___
     3. Execute a solution ___(f5)___
 
-* Frontend
-  1.. Abra um prompt de comando (cmd, bash...)
+  * Frontend
+    1. Abra um prompt de comando (cmd, bash...)
     2. Vá ao diretório raiz do projeto ___(~/DesafioFULL/Frontend/DesafioFrontend)___
     3. rode o comando ___npm run start___
 
