@@ -22,7 +22,7 @@ namespace DesafioBackend.Api.Controllers.v1
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateTitulo(CreateTituloCommand command)
+        public async Task<IActionResult> CreateTitulo([FromBody]CreateTituloCommand command)
         {
             return await GenerateResponseAsync(async () => await MediatorService.Send(command));
         }
