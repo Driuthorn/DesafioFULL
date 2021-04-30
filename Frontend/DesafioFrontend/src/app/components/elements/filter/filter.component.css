@@ -1,0 +1,14 @@
+@import '../../../../assets/css/button.css';
+
+:host {
+    width: 100%;
+}
+
+.filter p {
+    width: 100%;
+    margin: 0.5rem 1rem;
+}
+
+.filter input {
+    width: 100%;
+}
