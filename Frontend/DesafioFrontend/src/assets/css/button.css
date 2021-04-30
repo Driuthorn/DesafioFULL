@@ -1,0 +1,64 @@
+.button {
+  border: transparent;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  border-radius: 30px;
+}
+
+.button-search {
+  background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+  background-size: 200% auto;
+}
+
+.button-success {
+  background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%);
+  background-size: 200% auto;
+}
+
+.button-cancel {
+  background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  background-size: 200% auto;
+}
+
+.transition {
+  transition: 0.5s;
+}
+
+.button:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button-outline {
+  background: transparent;
+  color: #00befd;
+  border: 1px solid #00befd;
+}
+.button-outline:hover {
+  background-color: #00befd;
+  color: white;
+}
+
+.button-outline-transparent {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50px;
+}
+.button-outline-transparent:hover {
+  background-color: #fff;
+  color: blue;
+}
+
