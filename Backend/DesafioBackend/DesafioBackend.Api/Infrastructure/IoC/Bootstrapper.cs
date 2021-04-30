@@ -1,4 +1,5 @@
-﻿using DesafioBackend.Data.Database.Interface;
+﻿using DesafioBackend.Api.Infrastructure.Pipelines;
+using DesafioBackend.Data.Database.Interface;
 using DesafioBackend.Data.Database.Repository;
 using DesafioBackend.Data.Query.Queries.v1.Titulo.Get;
 using DesafioBackend.Domain.Commands.v1.Titulo.Create;
@@ -41,6 +42,7 @@ namespace DesafioBackend.Api.Infrastructure.IoC
             container.Collection.Register(typeof(IRequestPostProcessor<,>), Enumerable.Empty<Type>());
 
             container.Register(() => new ServiceFactory(container.GetInstance), Lifestyle.Singleton);
+            container.Collection.Register(typeof(IPipelineBehavior<,>), new[] { typeof(ValidatorRequestBehavior<,>) });
         }
 
         private void InjectRepositories(Container container)
