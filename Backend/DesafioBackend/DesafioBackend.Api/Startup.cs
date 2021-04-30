@@ -26,6 +26,17 @@ namespace DesafioBackend.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("AllowAllHeaders",
+                    builder =>
+                    {
+                        builder
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowAnyOrigin();
+                    });
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DesafioBackend", Version = "v1" });
@@ -54,6 +65,7 @@ namespace DesafioBackend.Api
             }
 
             app.UseRouting();
+            app.UseCors("AllowAllHeaders");
             _bootstrapper.Inject(_dependencyInjectionContainer);
             app.UseSimpleInjector(_dependencyInjectionContainer);
             app.UseSwagger();
