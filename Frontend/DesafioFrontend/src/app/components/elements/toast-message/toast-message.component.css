@@ -1,0 +1,30 @@
+.custom-toast {
+  opacity: 1;
+  max-width: none;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  font-size: 1.2rem;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  z-index: 2200;
+}
+
+.custom-toast .alert-danger {
+  background-color: #F06172
+}
+
+.custom-toast .alert-success {
+  background-color: #B8E986
+}
+
+.custom-toast .toast-body {
+  padding: 1.8rem;
+  font-weight: 500;
+  color: white;
+}
+
+.custom-toast.toast:not(:last-child) {
+  margin-bottom: 0;
+}

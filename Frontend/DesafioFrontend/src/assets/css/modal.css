@@ -1,0 +1,37 @@
+.modal-content {
+  display: block;
+  border: 0;
+  border-radius: 0;
+}
+
+.modal-dialog {
+  min-width: 300px;
+  max-width: 500px;
+  overflow-y: initial !important;
+
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  height: 56px;
+  background-image: linear-gradient(149deg, rgba(17,17,191,1) 0%, rgba(9,121,111,1) 100%);
+  color: white;
+  justify-content: space-between;
+  padding: 0 25px;
+  align-items: center;
+  display: flex;
+}
+.modal-title h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}

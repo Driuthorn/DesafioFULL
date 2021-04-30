@@ -1,0 +1,18 @@
+.loading-spinner {
+    background-color: rgba(0,0,0,.7);
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    z-index: 2222;
+}
+
+.spinner-border {
+    width: 4rem;
+    height: 4rem;
+    color: white;
+}

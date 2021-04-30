@@ -1,0 +1,9 @@
+<div class="col-md-12 filter form-inline">
+    <p>{{label}}</p>
+    <div class="form-group col-md-10">
+        <input type="text" placeholder="{{placeholder}}" class="form-control" [(ngModel)]="filterInput" (keyup.enter)="search()">
+    </div>
+    <div class="col-4 col-md-2">
+        <button type="submit" class="button button-search transition" (click)="search()">Buscar</button>
+    </div>
+</div>

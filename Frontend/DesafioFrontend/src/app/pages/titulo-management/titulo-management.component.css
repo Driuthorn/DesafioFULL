@@ -1,0 +1,19 @@
+@import '../../../assets/css/button.css';
+
+.scroll-container {
+  width: 100%;
+}
+
+td.collapse-row {
+  border-style: none;
+  padding: 0;
+}
+
+.footer-button {
+  float: right;
+  padding: 20px;
+}
+
+.search-container {
+  padding-bottom: 20px;
+}
