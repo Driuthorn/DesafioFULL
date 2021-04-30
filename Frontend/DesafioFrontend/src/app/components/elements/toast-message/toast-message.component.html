@@ -1,0 +1,11 @@
+<div class="toast custom-toast" *ngIf="hasError" [@slideInOut]>
+  <div class="toast-body alert-danger">
+    {{message}}
+  </div>
+</div>
+
+<div class="toast custom-toast" *ngIf="hasSuccess" [@slideInOut]>
+  <div class="toast-body alert-success">
+    {{message}}
+  </div>
+</div>
