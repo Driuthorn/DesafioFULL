@@ -1,7 +1,6 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http'
 import { Injectable } from "@angular/core";
 import { Observable } from 'rxjs';
-import { DataTransferService } from '../../core/data-transfer.service';
 import { LoaderService } from '../loader.service';
 
 @Injectable()
@@ -9,8 +8,7 @@ export class LoaderInterceptor implements HttpInterceptor {
     private requests: HttpRequest<any>[] = [];
 
     constructor(
-        private loaderService: LoaderService,
-        private DataTransferService: DataTransferService) { }
+        private loaderService: LoaderService) { }
     
     removeRequest(request: HttpRequest<any>) {
         const index = this.requests.indexOf(request);
@@ -35,9 +33,6 @@ export class LoaderInterceptor implements HttpInterceptor {
                         }
                     },
                     err => {
-                        if (err instanceof HttpErrorResponse) {
-                            this.DataTransferService.sendError(err);
-                        }
                         this.removeRequest(request);
                         observer.error(err);
                     },
