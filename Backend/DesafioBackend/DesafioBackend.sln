@@ -11,21 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - CrossCutting", "4 - CrossCutting", "{6EED8D0F-C1E7-4038-AE0A-6A51B3E42B34}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{B288CE41-AE27-4A5A-95E0-4D56F8B7662E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackend.Api", "DesafioBackend.Api\DesafioBackend.Api.csproj", "{82315652-A633-46A7-83EC-65BB6C48BEDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackend.Api", "DesafioBackend.Api\DesafioBackend.Api.csproj", "{82315652-A633-46A7-83EC-65BB6C48BEDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackend.Domain", "DesafioBackend.Domain\DesafioBackend.Domain.csproj", "{AB5B6E94-C4D6-43A2-BD93-57591083E3A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackend.Domain", "DesafioBackend.Domain\DesafioBackend.Domain.csproj", "{AB5B6E94-C4D6-43A2-BD93-57591083E3A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackend.Data.Database", "DesafioBackend.Data.Database\DesafioBackend.Data.Database.csproj", "{E230F260-5E06-453D-9DBF-C798ADD0C6C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackend.Data.Database", "DesafioBackend.Data.Database\DesafioBackend.Data.Database.csproj", "{E230F260-5E06-453D-9DBF-C798ADD0C6C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackend.Data.Query", "DesafioBackend.Data.Query\DesafioBackend.Data.Query.csproj", "{2F625EF2-2FAD-48A5-A561-07AEACD5C0FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackend.Data.Query", "DesafioBackend.Data.Query\DesafioBackend.Data.Query.csproj", "{2F625EF2-2FAD-48A5-A561-07AEACD5C0FB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackend.CrossCutting.Exceptions", "DesafioBackend.CrossCutting.Exceptions\DesafioBackend.CrossCutting.Exceptions.csproj", "{FC12AA20-7608-4E27-B14C-FB231B16687C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackend.Domain.Tests", "DesafioBackend.Domain.Tests\DesafioBackend.Domain.Tests.csproj", "{3AA04077-FA1F-43A0-842F-BA4BF1B9269F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackend.Infrastructure.Data.Query.Tests", "DesafioBackend.Infrastructure.Data.Query.Tests\DesafioBackend.Infrastructure.Data.Query.Tests.csproj", "{46558194-0ADE-4242-8EB5-AFF15C2BD259}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackend.CrossCutting.Exceptions", "DesafioBackend.CrossCutting.Exceptions\DesafioBackend.CrossCutting.Exceptions.csproj", "{FC12AA20-7608-4E27-B14C-FB231B16687C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,14 +47,6 @@ Global
 		{FC12AA20-7608-4E27-B14C-FB231B16687C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC12AA20-7608-4E27-B14C-FB231B16687C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC12AA20-7608-4E27-B14C-FB231B16687C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3AA04077-FA1F-43A0-842F-BA4BF1B9269F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3AA04077-FA1F-43A0-842F-BA4BF1B9269F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3AA04077-FA1F-43A0-842F-BA4BF1B9269F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3AA04077-FA1F-43A0-842F-BA4BF1B9269F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46558194-0ADE-4242-8EB5-AFF15C2BD259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46558194-0ADE-4242-8EB5-AFF15C2BD259}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46558194-0ADE-4242-8EB5-AFF15C2BD259}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46558194-0ADE-4242-8EB5-AFF15C2BD259}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,8 +57,6 @@ Global
 		{E230F260-5E06-453D-9DBF-C798ADD0C6C9} = {0F39C4F1-442A-4F35-B824-9E13CCF0947E}
 		{2F625EF2-2FAD-48A5-A561-07AEACD5C0FB} = {0F39C4F1-442A-4F35-B824-9E13CCF0947E}
 		{FC12AA20-7608-4E27-B14C-FB231B16687C} = {6EED8D0F-C1E7-4038-AE0A-6A51B3E42B34}
-		{3AA04077-FA1F-43A0-842F-BA4BF1B9269F} = {B288CE41-AE27-4A5A-95E0-4D56F8B7662E}
-		{46558194-0ADE-4242-8EB5-AFF15C2BD259} = {B288CE41-AE27-4A5A-95E0-4D56F8B7662E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A6A6406-8F28-4C36-A5CA-4993FA325901}
