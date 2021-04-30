@@ -1,0 +1,8 @@
+.header-container {
+    display: flex;
+    background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+    color: white;
+    justify-content: space-between;
+    padding: 20px;
+    height: 70px;
+}
