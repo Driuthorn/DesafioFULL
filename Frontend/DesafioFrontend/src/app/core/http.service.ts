@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment'
 
-
 @Injectable({
     providedIn: 'root'
 })
@@ -35,7 +34,7 @@ export class HttpService {
                         resolve(response);
                     },
                     (error) => {
-                        reject(error);
+                        reject(this.handleError(error));
                     }
                 );
         })
@@ -55,11 +54,17 @@ export class HttpService {
                         resolve(response);
                     },
                     (error) => {
-                        reject(error);
+                        reject(this.handleError(error));
                     }
                 );
         });
 
         return promise;
+    }
+
+    handleError(errorResponse): string {
+        const errorMessage = errorResponse.error.message ?? '';
+
+        return errorMessage
     }
 }
