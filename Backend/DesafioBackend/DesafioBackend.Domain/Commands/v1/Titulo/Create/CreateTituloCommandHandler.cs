@@ -1,4 +1,5 @@
-﻿using DesafioBackend.Data.Database.Entities;
+﻿using DesafioBackend.CrossCutting.Exceptions.QueryExceptions;
+using DesafioBackend.Data.Database.Entities;
 using DesafioBackend.Data.Database.Interface;
 using MediatR;
 using System;
@@ -20,43 +21,52 @@ namespace DesafioBackend.Domain.Commands.v1.Titulo.Create
 
         public Task<Unit> Handle(CreateTituloCommand request, CancellationToken cancellationToken)
         {
-            var titulo = new TituloEntity
+            try
             {
-                Id = Guid.NewGuid(),
-                NumeroTitulo = request.NumeroTitulo,
-                NomeDevedor = request.NomeDevedor,
-                CPFDevedor = request.CPFDevedor,
-                Juros = request.Juros,
-                Multa = request.Multa,
-                QtdParcelas = request.QtdParcelas,
-            };
+                var titulo = new TituloEntity
+                {
+                    Id = Guid.NewGuid(),
+                    NumeroTitulo = request.Numero,
+                    NomeDevedor = request.NomeDevedor,
+                    CPFDevedor = request.CPFDevedor,
+                    Juros = request.Juros,
+                    Multa = request.Multa,
+                    QtdParcelas = request.Parcelas.Count,
+                };
 
-            titulo.Parcelas = CreateParcelas(titulo.Id, request);
+                titulo.Parcelas = CreateParcelas(titulo.Id, request.Parcelas);
 
-            _tituloRepository.Create(titulo);
+                _tituloRepository.Create(titulo);
 
-            _tituloRepository.SaveChanges();
+                _tituloRepository.SaveChanges();
 
-            return Task.FromResult(Unit.Value);
+                return Task.FromResult(Unit.Value);
+            }
+            catch (Exception)
+            {
+                throw new CreateTituloException("Ocorreu um erro ao criar o Titulo, tente novamente em alguns instantes.");
+            }
         }
 
-        private List<Parcela> CreateParcelas(Guid tituloId, CreateTituloCommand request)
+        private List<Parcela> CreateParcelas(Guid tituloId, List<CreateTituloCommand.Parcela> parcelas)
         {
-            var parcelas = new List<Parcela>();
+            var parcelasEntityList = new List<Parcela>();
 
-            for (int i = 1; i <= request.QtdParcelas; i++)
+            foreach (var parcela in parcelas)
             {
-                parcelas.Add(new Parcela
+                var parcelaEntity = new Parcela
                 {
                     Id = Guid.NewGuid(),
                     IdTitulo = tituloId,
-                    NumeroParcela = i,
-                    Valor = request.Valor / request.QtdParcelas,
-                    Vencimento = request.DataVencimentoInicial.AddMonths(i-1)
-                });
+                    NumeroParcela = parcela.Numero,
+                    Valor = parcela.Valor,
+                    Vencimento = parcela.DataVencimento
+                };
+
+                parcelasEntityList.Add(parcelaEntity);
             }
 
-            return parcelas;
+            return parcelasEntityList;
         }
     }
 }

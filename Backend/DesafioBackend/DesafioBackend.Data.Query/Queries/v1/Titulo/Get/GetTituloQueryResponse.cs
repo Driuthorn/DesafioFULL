@@ -15,7 +15,7 @@ namespace DesafioBackend.Data.Query.Queries.v1.Titulo.Get
         public class Titulo
         {
             public Guid Id { get; set; } 
-            public int NumeroTitulo { get; set; }
+            public int Numero { get; set; }
             public string NomeDevedor { get; set; }
             public int QtdParcelas { get; set; }
             public decimal ValorOriginal { get; set; }
@@ -26,9 +26,9 @@ namespace DesafioBackend.Data.Query.Queries.v1.Titulo.Get
 
         public class Parcela
         {
-            public int NumeroParcela { get; set; }
+            public int Numero { get; set; }
             public decimal Valor { get; set; }
-            public DateTime Vencimento { get; set; }
+            public DateTime DataVencimento { get; set; }
         }
         #endregion
     }

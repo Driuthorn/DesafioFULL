@@ -35,7 +35,7 @@ namespace DesafioBackend.Data.Query.Queries.v1.Titulo.Get
                     ValorAtual = Math.Round(parcelas.Sum(x => x.Valor), 2),
                     ValorOriginal = valorOriginal,
                     NomeDevedor = titulo.NomeDevedor,
-                    NumeroTitulo = titulo.NumeroTitulo,
+                    Numero = titulo.NumeroTitulo,
                     QtdParcelas = titulo.QtdParcelas,
                     Parcelas = parcelas,
                 });
@@ -71,13 +71,13 @@ namespace DesafioBackend.Data.Query.Queries.v1.Titulo.Get
 
                 queryResponseParcelas.Add(new GetTituloQueryResponse.Parcela
                 {
-                    NumeroParcela = parcela.NumeroParcela,
+                    Numero = parcela.NumeroParcela,
                     Valor = Math.Round(parcela.Valor + valorMulta + valorJuros, 2),
-                    Vencimento = parcela.Vencimento
+                    DataVencimento = parcela.Vencimento
                 });
             }
 
-            return queryResponseParcelas.OrderBy(x => x.Vencimento).ToList();
+            return queryResponseParcelas.OrderBy(x => x.DataVencimento).ToList();
         }
     }
 }

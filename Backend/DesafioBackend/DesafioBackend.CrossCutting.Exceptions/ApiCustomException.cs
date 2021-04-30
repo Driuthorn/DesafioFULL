@@ -6,11 +6,9 @@ namespace DesafioBackend.CrossCutting.Exceptions
     public class ApiCustomException : Exception
     {
         public HttpStatusCode ResponseCode { get; }
-        public string CustomMessage { get; }
 
-        public ApiCustomException(string customMessage, HttpStatusCode responseCode)
+        public ApiCustomException(string message, HttpStatusCode responseCode) : base(message)
         {
-            CustomMessage = customMessage;
             ResponseCode = responseCode;
         }
     }
